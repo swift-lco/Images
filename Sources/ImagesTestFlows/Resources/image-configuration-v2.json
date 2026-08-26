@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "images": [
+    {
+      "source": "raw/8178.jpg",
+      "source_size": {
+        "width": 8190,
+        "height": 5464
+      },
+      "outputs": [
+        {
+          "destination": "compressed/8178.jpg",
+          "format": "jpg",
+          "resize": {
+            "max_width": 1080
+          },
+          "quality": 80
+        },
+        {
+          "destination": "compressed/8178.webp",
+          "format": "webp",
+          "resize": {
+            "max_width": 1080
+          },
+          "quality": 80
+        }
+      ]
+    },
+    {
+      "source": "raw/Hondenmeesters.png",
+      "source_size": {
+        "width": 589,
+        "height": 143
+      },
+      "outputs": [
+        {
+          "destination": "compressed/Hondenmeesters.png",
+          "format": "png",
+          "quality": 60
+        },
+        {
+          "destination": "compressed/Hondenmeesters.webp",
+          "format": "webp",
+          "quality": 60
+        }
+      ]
+    }
+  ]
+}
