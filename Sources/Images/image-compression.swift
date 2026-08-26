@@ -155,8 +155,16 @@ public enum ImageCompression {
             ImagePNGEncoder(),
             ImageIOEncoder(),
         ],
-        fileSystem: FileSystem = .default
+        fileSystem: FileSystem = .default,
+        progress: ((ImageCompressionProgress) -> Void)? = nil
     ) -> ImageCompressionReport {
+        let totalOutputCount = configuration.images.reduce(
+            into: 0
+        ) { count, image in
+            count += image.outputs.count
+        }
+
+        var completedOutputCount = 0
         var items: [ImageCompressionItem] = []
         var incremental = ImageIncrementalSession(
             project: project
@@ -164,6 +172,22 @@ public enum ImageCompression {
 
         for image in configuration.images {
             for output in image.outputs {
+                let itemCountBeforeOutput = items.count
+
+                defer {
+                    if items.count > itemCountBeforeOutput {
+                        completedOutputCount += 1
+
+                        progress?(
+                            .init(
+                                completedCount: completedOutputCount,
+                                totalCount: totalOutputCount,
+                                item: items[itemCountBeforeOutput]
+                            )
+                        )
+                    }
+                }
+
                 do {
                     let source = try project.sourceURL(
                         image.source

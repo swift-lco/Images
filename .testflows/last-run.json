@@ -3,12 +3,12 @@
   "failed_names" : [
 
   ],
-  "generated_at" : "2026-08-26T17:54:04Z",
+  "generated_at" : "2026-08-26T20:15:57Z",
   "passed" : 11,
   "results" : [
     {
       "display_name" : "Project layout defaults remain stable",
-      "duration_seconds" : 1.895427703857422e-05,
+      "duration_seconds" : 7.700920104980469e-05,
       "name" : "project-layout-defaults",
       "status" : "passed",
       "tags" : [
@@ -19,7 +19,7 @@
     },
     {
       "display_name" : "Image paths render through Path",
-      "duration_seconds" : 0.00010406970977783203,
+      "duration_seconds" : 0.0002300739288330078,
       "name" : "path-rendering",
       "status" : "passed",
       "tags" : [
@@ -29,7 +29,7 @@
     },
     {
       "display_name" : "Image configuration exposes semantic paths, resize constraints, and quality",
-      "duration_seconds" : 0.0002690553665161133,
+      "duration_seconds" : 0.00018107891082763672,
       "name" : "image-configuration-swift-contract",
       "status" : "passed",
       "tags" : [
@@ -41,7 +41,7 @@
     },
     {
       "display_name" : "Resize constraints preserve aspect ratio and never upscale",
-      "duration_seconds" : 3.933906555175781e-06,
+      "duration_seconds" : 3.0994415283203125e-06,
       "name" : "image-resize-fitting",
       "status" : "passed",
       "tags" : [
@@ -52,7 +52,7 @@
     },
     {
       "display_name" : "Schema-v2 image configuration preserves the approved Swift contract",
-      "duration_seconds" : 0.005296945571899414,
+      "duration_seconds" : 0.012838006019592285,
       "name" : "image-configuration-v2-round-trip",
       "status" : "passed",
       "tags" : [
@@ -64,7 +64,7 @@
     },
     {
       "display_name" : "Config generation reads deterministic image fixtures",
-      "duration_seconds" : 0.005144000053405762,
+      "duration_seconds" : 0.015403985977172852,
       "name" : "generated-image-configuration",
       "status" : "passed",
       "tags" : [
@@ -76,7 +76,7 @@
     },
     {
       "display_name" : "Config generation preserves existing outputs and removes stale sources",
-      "duration_seconds" : 0.001726984977722168,
+      "duration_seconds" : 0.0019459724426269531,
       "name" : "preserved-configuration-reconciliation",
       "status" : "passed",
       "tags" : [
@@ -88,7 +88,7 @@
     },
     {
       "display_name" : "Native encoders resize PNG and create WebP",
-      "duration_seconds" : 0.009263038635253906,
+      "duration_seconds" : 0.011165022850036621,
       "name" : "native-image-compression",
       "status" : "passed",
       "tags" : [
@@ -100,7 +100,7 @@
     },
     {
       "display_name" : "Compression rebuilds only changed outputs",
-      "duration_seconds" : 0.013895034790039062,
+      "duration_seconds" : 0.01371002197265625,
       "name" : "incremental-image-compression",
       "status" : "passed",
       "tags" : [
@@ -111,7 +111,7 @@
     },
     {
       "display_name" : "Compression removes stale configured outputs from compressed",
-      "duration_seconds" : 0.004406929016113281,
+      "duration_seconds" : 0.004263043403625488,
       "name" : "compression-prunes-stale-outputs",
       "status" : "passed",
       "tags" : [
@@ -123,7 +123,7 @@
     },
     {
       "display_name" : "Compression rejects destinations outside compressed",
-      "duration_seconds" : 0.0010280609130859375,
+      "duration_seconds" : 0.0010409355163574219,
       "name" : "compression-path-sandbox",
       "status" : "passed",
       "tags" : [

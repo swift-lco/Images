@@ -47,9 +47,46 @@ let incrementalCompressionFlow = diagnosticFlow(
         ]
     )
 
+    var initialProgress: [ImageCompressionProgress] = []
+
     let initial = ImageCompression.compress(
         in: project,
-        configuration: configuration
+        configuration: configuration,
+        progress: { progress in
+            initialProgress.append(
+                progress
+            )
+        }
+    )
+
+    try Expect.equal(
+        initialProgress.count,
+        1,
+        "initial compression progress count"
+    )
+
+    try Expect.equal(
+        initialProgress[0].completedCount,
+        1,
+        "initial compression completed count"
+    )
+
+    try Expect.equal(
+        initialProgress[0].totalCount,
+        1,
+        "initial compression total count"
+    )
+
+    try Expect.equal(
+        initialProgress[0].item.status,
+        .encoded,
+        "initial compression progress status"
+    )
+
+    try Expect.equal(
+        initialProgress[0].item.destination,
+        configuration.images[0].outputs[0].destination.string,
+        "initial compression progress destination"
     )
 
     try Expect.equal(
@@ -66,9 +103,28 @@ let incrementalCompressionFlow = diagnosticFlow(
         "incremental state exists"
     )
 
+    var unchangedProgress: [ImageCompressionProgress] = []
+
     let unchanged = ImageCompression.compress(
         in: project,
-        configuration: configuration
+        configuration: configuration,
+        progress: { progress in
+            unchangedProgress.append(
+                progress
+            )
+        }
+    )
+
+    try Expect.equal(
+        unchangedProgress.count,
+        1,
+        "unchanged compression progress count"
+    )
+
+    try Expect.equal(
+        unchangedProgress[0].item.status,
+        .unchanged,
+        "unchanged compression progress status"
     )
 
     try Expect.equal(
