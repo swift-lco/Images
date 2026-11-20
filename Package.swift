@@ -14,12 +14,6 @@ let package = Package(
                 "Images",
             ]
         ),
-        .executable(
-            name: "imagetest",
-            targets: [
-                "ImagesTestFlows",
-            ]
-        ),
     ],
     dependencies: [
         .package(
@@ -44,10 +38,6 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/leviouwendijk/Processes.git",
-            branch: "master"
-        ),
-        .package(
-            url: "https://github.com/leviouwendijk/TestFlows.git",
             branch: "master"
         ),
         .package(
@@ -94,21 +84,6 @@ let package = Package(
                 .product(
                     name: "PNG",
                     package: "swift-png"
-                ),
-            ]
-        ),
-        .executableTarget(
-            name: "ImagesTestFlows",
-            dependencies: [
-                "Images",
-                .product(
-                    name: "TestFlows",
-                    package: "TestFlows"
-                ),
-            ],
-            resources: [
-                .copy(
-                    "Resources/image-configuration-v2.json"
                 ),
             ]
         ),
