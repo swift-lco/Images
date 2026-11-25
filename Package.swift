@@ -17,27 +17,27 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/leviouwendijk/IO.git",
+            url: "https://github.com/swift-lco/IO.git",
             branch: "master"
         ),
         .package(
-            url: "https://github.com/leviouwendijk/Path.git",
+            url: "https://github.com/swift-lco/Path.git",
             branch: "master"
         ),
         .package(
-            url: "https://github.com/leviouwendijk/FileTypes.git",
+            url: "https://github.com/swift-lco/FileTypes.git",
             branch: "master"
         ),
         .package(
-            url: "https://github.com/leviouwendijk/Readers.git",
+            url: "https://github.com/swift-lco/Readers.git",
             branch: "master"
         ),
         .package(
-            url: "https://github.com/leviouwendijk/Writers.git",
+            url: "https://github.com/swift-lco/Writers.git",
             branch: "master"
         ),
         .package(
-            url: "https://github.com/leviouwendijk/Processes.git",
+            url: "https://github.com/swift-lco/Processes.git",
             branch: "master"
         ),
         .package(
