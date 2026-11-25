@@ -67,7 +67,7 @@
     {
       "identity" : "parsing",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/leviouwendijk/Parsing.git",
+      "location" : "https://github.com/swift-langs/Parsing.git",
       "state" : {
         "branch" : "master",
         "revision" : "8cd4b7bdc25d590d65b803a4f3e07e4fe3756664"
